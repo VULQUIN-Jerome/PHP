@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.containerTable {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+.column {
+    text-align: center;    
+    width: 20%;
+    padding: 20px 0px;
+}
+
+h2 {
+    padding-bottom: 20px;
+    text-decoration: underline;
+}
+
+@media (max-width:1280px) {
+    .column {
+        width: 25%;
+    }
+}
+
+@media (max-width:800px) {
+    .column {
+        width: 33.3%;
+    }
+}

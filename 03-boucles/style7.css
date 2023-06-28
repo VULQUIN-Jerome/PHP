@@ -1,0 +1,37 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#tableau {
+    width: 1200px;
+    height:1200px;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.case {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.black {
+    color: white;
+    background-color: black;
+}
+
+.grey {
+    background-color: gray;
+}
+
+.white {
+    background-color: white;
+    color: black;
+}
