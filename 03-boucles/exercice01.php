@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php for ($i = 10 ; $i >=1 ; $i--) { ?>
-        <p><?= $i ?>
+        <span><?= $i ?></span>
     <?php } ?>
     
 </body>

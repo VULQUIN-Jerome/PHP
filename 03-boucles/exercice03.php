@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php
-    $valeur1=27;
-    $valeur2=18;
+    $valeur1=rand(1,100);
+    $valeur2=rand(1,100);
     $pgcd=1;
 
     if ( $valeur1>$valeur2) {

@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php for ( $i = 1 ; $i <= 100 ; $i++ ) {
-        if ($i%2 == 0 ) { ?>
-            <p><?= $i ?><p>
+        if ($i%2 === 0 ) { ?>
+            <span><?= $i ?><span>
         <?php } ?>
     <?php } ?>
     
