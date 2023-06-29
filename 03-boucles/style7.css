@@ -1,7 +1,7 @@
 * {
     margin:0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing:content-box;
 }
 
 #tableau {
@@ -10,16 +10,22 @@
     display: flex;
     margin: auto;
     flex-wrap: wrap;
+    font-family:sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    border: 2px solid black;
+    border-left: 4px solid black;
+    border-top: 4px solid black;
 }
 
 .case {
     width: 100px;
     height: 100px;
-    text-align: center;
-    border: 2px solid black;
+    text-align: center;    
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing:border-box;
 }
 
 .black {
@@ -34,4 +40,22 @@
 .white {
     background-color: white;
     color: black;
+}
+
+.bordRight {
+    border-right: 4px solid black;    
+    font-size: 30px;
+}
+
+.bordBottom {
+    border-bottom: 4px solid black;
+    font-size: 30px;
+}
+
+.bordLigne {
+    border-right: 4px solid black;
+}
+
+.bordColonne {
+    border-bottom: 4px solid black;
 }

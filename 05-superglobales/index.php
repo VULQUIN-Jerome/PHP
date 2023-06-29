@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superglobales</title>
+</head>
+
+<body>
+    <h2>Superglobales</h2>
+    <?php
+    // $_GET est un tableau qui contient les paramètres de l'URL
+    // index.php?name=fiorella&age=3
+    var_dump($_GET);
+
+    // L'opérateur null coalesce
+    $name = $_GET['name'] ?? null; // Si $_GET['name'] n'existe pas alors $name sera null
+    $name = $_GET['name'] ?? 'John'; // Si $_GET['name'] n'existe pas alors $name sera John
+    $age = $_GET['age'] ?? null;
+    $age = (int) $age;
+    var_dump($age);
+    ?>
+
+    <a href="index.php">Sans rien</a>
+    <a href="index.php?name=fiorella&age=3">Fiorella</a>
+    <a href="index.php?name=toto">Toto</a>
+
+    <h1>Bonjour <?= $name ?></h1>
+
+    <?php if ($age) { ?>
+        <p>Tu as <?= $age; ?> ans.</p>
+    <?php } ?>
+
+    <form action="" method="GET">
+        <input type="text" name="name" value="<?= $name ?>" id="">
+        <select name="age">
+            <?php for ($i = 18; $i <= 120; $i++) { ?>
+                <option value="<?= $i ?>" <?= $i == $age ? 'selected' : '' ?>>
+                    <?= $i . " ans" ?>
+                </option>
+            <?php } ?>
+        </select>
+        <button>Envoyer</button>
+    </form>
+</body>
+
+</html>
