@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    padding: 0 15px;
+    width: 800px;
+}
+
+.section {
+    margin-bottom: 15px;
+}
+
+.section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.section input, .section select {
+    width: 100%;
+    border: 1px solid #bababa;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: black;
+    color: #fff;
+    border: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+}
+
+form button:hover {
+    background-color: #fff;
+    color:  black;
+    border: 3px solid black;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+}
