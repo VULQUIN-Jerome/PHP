@@ -8,7 +8,7 @@
 <body>
     <?php
     /**
-     * Donne le chiffre au carré
+     * Donne le carré de ce nombre
      */
     function carre(float $number) : Float {
         return $number*$number;
@@ -32,14 +32,14 @@
      * Retourne le HT en TTC ou le TTC en HT
      */
     function prix(float $prix, float $tva, string $choix ='TTC') {
+        $choix=strtoupper($choix);
         if ($choix !== 'TTC' && $choix !== 'HT') {
             $choix = 'TTC';
         }
         if ($choix=='TTC') {
             return $prix*(1+($tva/100));
-        } else {
-            return $prix/(1+($tva/100));
         }
+        return $prix/(1+($tva/100));
     }
 
     $cote = 5;
@@ -54,7 +54,7 @@
 ?>
 <p>Mise au carré de <?= "$cote => ".carre($cote)?></p>
 <p>Aire rectangle de <?= "longueur : $longueur et largeur : $largeur  => Aire : ".aireRectangle($longueur,$largeur) ?></p>
-<p>Aire cercle de rayon : <?= $rayon." => ".aireCercle(10) ?></p>
+<p>Aire cercle de rayon : <?= $rayon." => ".round(aireCercle(10),2) ?></p>
 <p>Prix <?= $conversion ?> de <?= $prix ?> € avec un taux de <?= $taux ?> => <?= number_format(prix($prix,$taux,$conversion), 2, '.', ' ') ?> €</p>
 <p>Prix <?= $conversion2 ?> de <?= $prix ?> € avec un taux de <?= $taux ?> => <?= number_format(prix($prix,$taux,$conversion2), 2, '.', ' ') ?> €</p>
 </body>

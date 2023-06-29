@@ -30,33 +30,33 @@
     ];
     ?>
 
-    <!-- Liste des élèves avec toute leurs notes -->
+    <h2> Liste des élèves avec toute leurs notes </h2>
 
     <?php foreach ($eleves as $eleve) { ?>
-        <h2>L'élève <?= $eleve['nom'] . " a eu : ".implode(", ", $eleve['notes']); ?></h2> 
+        <h3>L'élève <?= $eleve['nom'] . " a eu : " . implode(", ", $eleve['notes']); ?></h3>
     <?php }
     ?>
     <hr>
 
-    <!-- Moyenne de Jean -->
+    <h2> Moyenne de Jean </h2>
 
     <?php
-    $moyenneJean = array_sum($eleves[2]['notes'])/count($eleves[2]['notes']);
+    $moyenneJean = round(array_sum($eleves[2]['notes']) / count($eleves[2]['notes']),2);
     ?>
-    <h2>Le moyenne de Jean est de <?= $moyenneJean ?></h2>
+    <h3>Le moyenne de Jean est de <?= $moyenneJean ?></h3>
     <hr>
 
-    <!-- Eleves ayant la moyenne -->
+    <h2> Eleves ayant la moyenne </h2>
 
     <?php
     $count = 0;
-    foreach ($eleves as $index => $eleve) { 
-        $moyenne = array_sum($eleves[$index]['notes'])/count($eleves[$index]['notes']);
+    foreach ($eleves as $index => $eleve) {
+        $moyenne = array_sum($eleves[$index]['notes']) / count($eleves[$index]['notes']);
         if ($moyenne >= 10) {
             $count++; ?>
             <h2><?= $eleve['nom'] . " a la moyenne" ?></h2>
         <?php } else { ?>
-            <h2><?= $eleve['nom'] . " n'a pas la moyenne" ?></h2>
+            <h2><?= $eleve['nom'] . " n\'a pas la moyenne" ?></h2>
     <?php }
     } ?>
     <h2>Nombre d'élèves avec la moyenne : <?= $count ?></h2>
@@ -65,14 +65,8 @@
     <!-- Eleve(s) ayant la meilleure note -->
 
     <?php
-    $meilleureNote = 0;
-    $elevesMeilleureNote = [];
-    foreach ($eleves as $eleve) {
-        $meilleureNoteEleve = max($eleve['notes']);
-        if ($meilleureNoteEleve > $meilleureNote) {
-            $meilleureNote = $meilleureNoteEleve;
-        }
-    }
+    $meilleureNote = max(array_merge(...array_column($eleves,'notes')));
+    $elevesMeilleureNote = [];    
 
     foreach ($eleves as $eleve) {
         if (in_array($meilleureNote, $eleve['notes'])) {
@@ -94,7 +88,7 @@
         }
     }
     ?>
-    <h2><?= implode(", ", $elevesAyantEu) . " a/ont déjà eu un " .$noteFound ." !" ?></h2>
+    <h2><?= implode(", ", $elevesAyantEu) . " a/ont déjà eu un " . $noteFound . " !" ?></h2>
 
 </body>
 
