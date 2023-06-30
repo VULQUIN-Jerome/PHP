@@ -41,7 +41,7 @@
     <h2> Moyenne de Jean </h2>
 
     <?php
-    $moyenneJean = round(array_sum($eleves[2]['notes']) / count($eleves[2]['notes']),2);
+    $moyenneJean = round(array_sum($eleves[2]['notes']) / count($eleves[2]['notes']), 2);
     ?>
     <h3>Le moyenne de Jean est de <?= $moyenneJean ?></h3>
     <hr>
@@ -62,11 +62,11 @@
     <h2>Nombre d'élèves avec la moyenne : <?= $count ?></h2>
     <hr>
 
-    <!-- Eleve(s) ayant la meilleure note -->
+    <h2> Eleve(s) ayant la meilleure note </h2>
 
     <?php
-    $meilleureNote = max(array_merge(...array_column($eleves,'notes')));
-    $elevesMeilleureNote = [];    
+    $meilleureNote = max(array_merge(...array_column($eleves, 'notes')));
+    $elevesMeilleureNote = [];
 
     foreach ($eleves as $eleve) {
         if (in_array($meilleureNote, $eleve['notes'])) {
@@ -77,7 +77,7 @@
     <h2><?= implode(", ", $elevesMeilleureNote) . " a/ont la meilleure note : " . $meilleureNote ?></h2>
     <hr>
 
-    <!-- Eleve ayant déjà eu un 20  -->
+    <h2> Eleve ayant déjà eu un 20  </h2>
 
     <?php
     $noteFound = 20;

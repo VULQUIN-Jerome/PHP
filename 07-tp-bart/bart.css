@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+}
+
+.tableau {
+    width: 80%;
+    height: 600px;
+    background-color: #01551f;
+    border: 3px solid #652f04;
+    margin: auto;
+    position: relative;
+}
+
+.tableau p {
+    margin-top: 15px;
+    margin-left: 15px;
+    color : white;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+}
+
+img {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}

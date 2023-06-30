@@ -32,7 +32,7 @@
     <?php if ($age) { ?>
         <p>Tu as <?= $age; ?> ans.</p>
     <?php } ?>
-    
+
     <h2>Formulaire en GET</h2>
     <form action="" method="GET">
         <div class="section">
