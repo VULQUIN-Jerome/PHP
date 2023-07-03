@@ -14,23 +14,23 @@
         $videos = [
             0 => [
                 'nom' => 'Albert Meslay',
-                'id' => 'wSDmJxAmrmk'
+                'id' => 'wSDmJxAmrmk',
             ],
             1 => [
                 'nom' => 'Fab Squal',
-                'id' => 'd_Fux4IgliE'
+                'id' => 'd_Fux4IgliE',
             ],
             2 => [
                 'nom' => 'Mozinor',
-                'id' => 'Tmgl1s9R7bI'
+                'id' => 'Tmgl1s9R7bI',
             ],
             3 => [
                 'nom' => 'Coluche',
-                'id' => 'OOcQMdi8pV0'
+                'id' => 'OOcQMdi8pV0',
             ],
             4=> [
                 'nom' => 'Camille Berthollet',
-                'id' => 'ogZoZgtouow'
+                'id' => 'ogZoZgtouow',
             ],
         ];
 
