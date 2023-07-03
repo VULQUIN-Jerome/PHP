@@ -4,30 +4,74 @@
     box-sizing: border-box;
 }
 
-main {
-    display: flex;
+body {
+    background-color: chocolate;
 }
 
 .tableau {
-    width: 80%;
+    width: 1000px;
     height: 600px;
     background-color: #01551f;
-    border: 3px solid #652f04;
+    border: 8px solid #652f04;
     margin: auto;
+    margin-top: 30px;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .tableau p {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 15px;
     color : white;
     font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
     font-family: 'Permanent Marker', cursive;
+    display: inline-block;
 }
 
 img {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: -50px;
+    right: -15px;
+    width: 150px;
+}
+
+.selector {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    margin-top: 50px;
+    height: 90px;
+    border: 7px double #652f04;
+    border-radius: 7px;
+    background-color:#01551f;
+    align-items: center;
+}
+
+.punition {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: inline-block;
+    background-color:burlywood;
+    margin : 0 5px;
+}
+
+p.punition {
+    background-color:#01551f;
+    color:white;
+    font-size: 25px;    
+}
+
+button.punition {
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color:yellow;
+    color:brown;
+    padding: 0 5px;
+    font-size: 25px;   
 }
