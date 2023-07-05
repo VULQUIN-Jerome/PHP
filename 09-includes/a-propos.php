@@ -1,8 +1,9 @@
 <?php
 $title = 'A propos';
-require './parties/header.php' ?>
-    <div class="container">
+require 'partials/header.php'; ?>
+
+    <div class="container py-5">
         <h1>A propos</h1>
     </div>
 
-<?php require './parties/footer.php' ?>
+<?php require 'partials/footer.php'; ?>

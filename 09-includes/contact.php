@@ -1,15 +1,14 @@
 <?php
 $title = 'Contact';
-require './parties/header.php';
+require 'partials/header.php';
 
-// Récupération des données de formulaire
-
+// Récupération des données du formulaire
 $email = $_POST['email'] ?? null;
 $skills = $_POST['skills'] ?? [];
-$errors = []; // Stockera les erreurs du formulaire
+$errors = []; // Stocker les erreurs du formulaire
 
 $validSkills = [
-    'html' => 'HTML/CSS',
+    'html' => 'HTML / CSS',
     'js' => 'JavaScript',
     'java' => 'Java',
     'php' => 'PHP',
@@ -18,71 +17,79 @@ $validSkills = [
 // Vérifier si le formulaire est envoyé
 if (!empty($_POST)) {
     if (empty($email)) {
-        $errors[] = "L'email est obligatoire";
-    } elseif (!validEmail($email)) {
-        $errors[] = "L'email est invalide";
+        $errors[] = "L'email est obligatoire.";
+    } else if (!validEmail($email)) {
+        $errors[] = "L'email est invalide.";
     }
+
     if (count($skills) < 1) {
-        $errors[] = "Vous devez chosir au moins une compétence.";
-    } elseif (!validArray($skills, array_keys($validSkills))) {
+        $errors[] = "Vous devez choisir au moins une compétence.";
+    } else if (!validArray($skills, array_keys($validSkills))) {
         $errors[] = "Une compétence choisie n'est pas correcte.";
     }
 
     if (empty($errors)) {
-        $finalSkills =[];
-        // Permet d'afficher les valeurs "propres" au lieu des clés
+        $finalSkills = [];
+
+        // Permet d'afficher les valeurs "propres" et pas les clés
         foreach (array_unique($skills) as $skill) {
-            $finalSkills[] = $validSkills[$skill]; // $validSkills['html]
+            $finalSkills[] = $validSkills[$skill]; // $validSkills['html']
         }
-        $succes = "Bonjour $email, voici vos skills : " . implode(', ', $finalSkills);
+
+        $success = "Bonjour $email, voici vos skills : ".implode(', ', $finalSkills);
     }
 }
+
 ?>
-<div class="container py-5">
-    <h1>Contact</h1>
 
-    <?php if (isset($succes)) { ?>
-        <div class="alert alert-succes">
-            <?= $succes ?>
+    <div class="container py-5">
+        <h1>Contact</h1>
+
+        <?php if (isset($success)) { ?>
+        <div class="alert alert-success">
+            <?= $success; ?>
         </div>
-    <?php } ?>
+        <?php } ?>
 
-    <?php if (!empty($errors)) { ?>
-        <div class="alert alert-danger">
+        <?php if (!empty($errors)) { ?>
+            <div class="alert alert-danger">
             <?php foreach ($errors as $error) { ?>
-                <p class="m-0"><?= $error ?></p>
+                <p class="m-0"><?= $error; ?></p>
             <?php } ?>
-        </div>
-    <?php } ?>
-
-    <form class="ms-5" action="" method="post">
-        <div>
-            <label for="email" class="form-label">Email</label>
-            <input type="text" class="form-control" name="email" id="email" value="<?= $email; ?>">
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Compétences</label>
-            <div class="form-check">
-                <input type="checkbox" name="skills[]" id="html" value="html" <?= checked('php', $skills); ?> class="form-check-input">
-                <label for="html" class="form-check-label">HTML</label>
             </div>
-            <div class="form-check">
-                <input type="checkbox" name="skills[]" id="js" value="js" class="form-check-input">
-                <label for="js" class="form-check-label">JavaScript</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="skills[]" id="java" value="java" class="form-check-input">
-                <label for="java" class="form-check-label">Java</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="skills[]" id="php" value="php" class="form-check-input">
-                <label for="php" class="form-check-label">PHP</label>
-            </div>
-        </div>
+        <?php } ?>
 
-        <button class="btn-secondary    ">Valider</button>
-    </form>
-</div>
+        <form method="post">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" id="email" name="email" value="<?= $email; ?>">
+            </div>
 
-<?php require './parties/footer.php' ?>
+            <div class="mb-3">
+                <label class="form-label">Compétences</label>
+                <div class="form-check">
+                    <input type="checkbox" id="html" name="skills[]" value="html" <?= checked('html', $skills); ?> class="form-check-input">
+                    <label for="html" class="form-check-label">HTML / CSS</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="js" name="skills[]" value="js" <?= checked('js', $skills); ?> class="form-check-input">
+                    <label for="js" class="form-check-label">JavaScript</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="java" name="skills[]" value="java" <?= checked('java', $skills); ?> class="form-check-input">
+                    <label for="java" class="form-check-label">Java</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="php" name="skills[]" value="php" <?= checked('php', $skills); ?> class="form-check-input">
+                    <label for="php" class="form-check-label">PHP</label>
+                </div>
+            </div>
+
+            <button class="btn btn-dark">Valider</button>
+        </form>
+    </div>
+
+<?php require 'partials/footer.php'; ?>

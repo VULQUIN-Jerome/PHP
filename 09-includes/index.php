@@ -1,6 +1,7 @@
-    <?php require './parties/header.php' ?>
-        <div class="container">
-            <h1>PHP et Bootstrap</h1>
-        </div>
+<?php require 'partials/header.php'; ?>
 
-    <?php require './parties/footer.php' ?>
+    <div class="container py-5">
+        <h1>PHP et Bootstrap</h1>
+    </div>
+
+<?php require 'partials/footer.php'; ?>
