@@ -34,7 +34,7 @@ function convertCsvToArray(string $file): array {
 /**
  * Renvoie le nom de la page actuelle.
  */
-function pageName() {
+function pageName(): string {
     $uri = $_SERVER['REQUEST_URI']; // /php/09-includes/contact.php
     $name = strrchr($uri, '/'); // /contact.php
     $name = substr($name, 1, -4); // contact
@@ -45,6 +45,34 @@ function pageName() {
 /**
  * Permet de formatter une date US.
  */
-function formatDate(string $date, string $format = 'd/m/Y') {
+function formatDate(string $date, string $format = 'd/m/Y'): string {
     return date($format, strtotime($date));
+}
+
+/**
+ * Permet de formatter une durée brut en minutes.
+ */
+function formatDuration(int $duration): string {
+    $hours = floor($duration / 60);
+    $minutes = $duration % 60;
+    $zero = ($minutes < 10) ? '0' : '';
+
+    return $hours.'h'.$zero.$minutes;
+}
+
+/**
+ * Permet d'afficher une 404
+ */
+function show404(): void {
+    http_response_code(404);
+    require __DIR__.'/../404.php';
+    die();
+}
+
+/**
+ * Verifie si la date est valide
+ */
+function dateValide($date) {
+    $d = date_create_from_format('d/m/Y', $date);
+    return $d && date_format($d, 'd/m/Y') === $date;
 }
