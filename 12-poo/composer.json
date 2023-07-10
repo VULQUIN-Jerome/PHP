@@ -1,0 +1,15 @@
+{
+    "name": "jerome/12-poo",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "VULQUIN Jérôme",
+            "email": "gizmals@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -24,7 +24,7 @@ if(!empty($_POST)) {
         $errors['date']="La date saisie n'est pas valide.";
     }
 
-    if (strlen($description)<6) {
+    if (strlen($description) < 6) {
         $errors['description']="La description est insuffisante.";
     } else {
         $titre = htmlspecialchars(trim($titre));
@@ -37,8 +37,6 @@ if(!empty($_POST)) {
     if ($genre<1 ||$genre>count($categories) || $genre!=floor($genre)) {
         $errors['genre']="Vous n'avez pas précisé la catégorie.";
     }
-
-
 }
 
 var_dump($errors);
