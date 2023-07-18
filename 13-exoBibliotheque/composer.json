@@ -1,0 +1,17 @@
+{
+    "name": "jerome/13-exo-bibliotheque",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "VULQUIN Jérôme",
+            "email": "gizmals@gmail.com"
+        }
+    ],
+    "require": {
+        "filp/whoops": "^2.15"
+    }
+}

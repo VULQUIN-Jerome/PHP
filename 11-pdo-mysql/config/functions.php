@@ -1,5 +1,7 @@
 <?php
 
+session_start(); // Permet d'utiliser les sessions
+
 /**
  * Permet de se connecter à la BDD
  */
@@ -70,9 +72,15 @@ function show404(): void {
 }
 
 /**
- * Verifie si la date est valide
+ * Permet de nettoyer 🧹 les données utilisateurs.
  */
-function dateValide($date) {
-    $d = date_create_from_format('d/m/Y', $date);
-    return $d && date_format($d, 'd/m/Y') === $date;
+function sanitize(?string $value): string {
+    return trim(htmlspecialchars($value ?? ''));
+}
+
+/**
+ * Détermine si le formulaire est soumis.
+ */
+function submitted(): bool {
+    return ! empty($_POST);
 }
